@@ -18,6 +18,8 @@ mongoose.connect(process.env.DB_CONNECTION)
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error(err));
 
+app.get("/", (req, res) => res.send("Express on Vercel")); // vercel deployment
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
